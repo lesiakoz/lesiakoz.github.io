@@ -157,7 +157,7 @@ p {margin:5px 0 0 5px; color:#000000; font-size:12px; line-height:20px;}
 
 
 .footer {width:100%; clear:both; background-color:#000000; color:#ffffff; font-size:13px; position:relative; top:50px;}
-.footer-contact {width:970px; height:70px; margin-left:auto; margin-right:auto; position:relative; bottom:35px; z-index:100; background-image:url(../images/footer-contact-bg.png);}
+.footer-contact {width:970px; height:70px; margin-left:auto; margin-right:auto; position:relative; bottom:35px; z-index:100;}
 .footer-contact .chat {}
 .footer-contact .quote {float:right; padding-right:10px; position:relative; top:12px;}
 .footer-contact .LiveHelpStatus {padding-left: 430px; padding-top:13px;}
