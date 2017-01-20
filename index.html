@@ -4,7 +4,10 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
+	
+<meta name="viewport" content="width=device-width, target-densityDpi=device-dpi">
 <title>The Woman Men Adore...and Never Want To Leave</title>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
@@ -133,7 +136,44 @@
 				.cont-body {
 	width: 98%;
 }
+	
+/* 	try to do smth	     */
+		    
+@media  all and (max-width:360px),
+            screen and (-webkit-min-device-pixel-ratio: 3.0) and (max-width: 1080px),
+            screen and (-webkit-min-device-pixel-ratio: 2.0) and (max-width: 720px) {
+        // CSS HERE
+		     #container {
+                    margin: 0px auto;
+                    max-width: 360px;
+                }
 				
+				.h2 { font-size: 30px;}
+
+                #main {
+                    float: left;
+                 	max-width: 99%;
+                    background: #fff;
+                    
+                    padding: 2% 5%;
+                    margin-bottom: 50px;
+                    z-index: 10;
+
+                }
+                
+				.coll { max-width:350px;  }
+				.right-side { max-width:90%; margin:auto;}
+				
+				.left { max-width:98%; margin:auto !important; padding-right: 7%;}
+				
+				.right-pic { margin:auto; max-width:90%; height:auto; }
+				.cont-body { width:99%; float:left; padding-top:20px;}
+				#new-header {display:none;}
+				#new-header1 {	margin: auto!important; display:block;}
+				.footer {padding-top:30px; margin-bottom:20px;  padding-right: 7%;}
+    } 
+		    
+		    
 	@media only screen and (max-width: 360px) {
 		
 	
@@ -166,6 +206,7 @@
 				#new-header1 {	margin: auto!important; display:block;}
 				.footer {padding-top:30px; margin-bottom:20px;  padding-right: 7%;}
 	}
+/* 		try to do smth end     */
 
 @media (min-width: 980px) {	
 	#new-header1 {display:none;}
