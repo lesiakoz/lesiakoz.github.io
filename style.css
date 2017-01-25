@@ -4,7 +4,7 @@ body{
 	width:100%;
 }
 
-@media only screen and (max-width: 360px) {
+@media (max-width: 360px) {
  
  	body{
 		margin: 0 auto;
@@ -14,8 +14,7 @@ body{
  
 }
  
-@media only screen and (max-width: 768px) {
-
+@media (max-width: 768px) {
 	body{
 		margin: 0 auto;
 		max-width: 768px !important;
@@ -25,9 +24,9 @@ body{
  
 }
  
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
 
-		body{
+	body{
 		margin: 0 auto;
 		max-width: 992px !important;
 	}
@@ -36,9 +35,9 @@ body{
  
 }
  
-@media only screen and (max-width: 1382px) {
+@media (max-width: 1382px) {
 
-		body{
+	body{
 		margin: 0 auto;
 		max-width: 1382px !important;
 	}
