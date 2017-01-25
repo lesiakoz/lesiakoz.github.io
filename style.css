@@ -1,0 +1,50 @@
+ 
+body{
+	margin: 0 auto;
+	width:100%;
+}
+
+@media only screen and (max-width: 360px) {
+ 
+ 	body{
+		margin: 0 auto;
+		max-width: 360px !important;
+	}
+//Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее.
+ 
+}
+ 
+@media only screen and (max-width: 768px) {
+
+	body{
+		margin: 0 auto;
+		max-width: 768px !important;
+	}
+ 
+//Планшеты в режиме portrait.
+ 
+}
+ 
+@media only screen and (max-width: 992px) {
+
+		body{
+		margin: 0 auto;
+		max-width: 992px !important;
+	}
+ 
+//Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+ 
+}
+ 
+@media only screen and (max-width: 1382px) {
+
+		body{
+		margin: 0 auto;
+		max-width: 1382px !important;
+	}
+ 
+//Десктоп с большими разрешениями, телевизоры.
+ 
+}
+
+ 
