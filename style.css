@@ -1,0 +1,30 @@
+ 
+@media only screen and (min-width: 480px) {
+ 
+//Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее.
+ 
+}
+ 
+@media only screen and (min-width: 768px) {
+
+	body{
+		margin: 0 auto;
+		max-width: 768px;
+	}
+ 
+//Планшеты в режиме portrait.
+ 
+}
+ 
+@media only screen and (min-width: 992px) {
+ 
+//Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
+ 
+}
+ 
+@media only screen and (min-width: 1382px) {
+ 
+//Десктоп с большими разрешениями, телевизоры.
+ 
+}
+ 
