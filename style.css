@@ -13,7 +13,22 @@ body{
 //Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее.
  
 }
+
+@media only screen and (max-width: 600px) {
+
+	body{
+		margin: 0 auto;
+		max-width: 600px !important;
+	}
+
+	#social{
+		
+	}
  
+//Планшеты в режиме portrait.
+ 
+}
+
 @media (max-width: 768px) {
 	body{
 		margin: 0 auto;
