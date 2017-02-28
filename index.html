@@ -116,47 +116,35 @@ var ajaxHook = 'save-gepaid-alias';
 
 <!-- /Breadcrubs -->
 
+
+
+<style> 
+
+#ee, #ee1, #ee2, #ee3, #ee4{
+  display:none;
+}
+.edit:hover > #ee, .edit1:hover > #ee1, .edit3:hover > #ee3, .edit2:hover > #ee2, .edit4:hover > #ee4{
+  display:inline-block;
+  margin:0 20px 0; background-color: yellow;
+}
+
+.edit2, .main_td, .fax_td {
+  display:inline-block;
+  width:40%;
+} 
+</style>
+
 <div class="paper">
   
-  <h1 class= "head" >Tolson, Simpson and Assoc.</h1>
+  <h1 class= "edit" >Tolson, Simpson and Assoc. 
+    <img id="ee" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
+</h1>
   <!-- Labels -->
-<button id="save">Save Changes</button>
+<!-- <button id="save">Save Changes</button> -->
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="company labels">
 
-    <!--   <ul class="nav nav-pills">
-  <li class="dropdown">
-    <a href="#" data-toggle="dropdown" class=" active dropdown-toggle">
-      Меню 
-  </a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a href="#" data-toggle="dropdown" class=" active dropdown-toggle">
-      Меню 
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-    </ul>
-  </li>
-  <li class="dropdown pull-right">
-    <a href="#" data-toggle="dropdown" class="active dropdown-toggle">
-      Меню 
-    </a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-      <li><a href="#">Текст подпункта</a></li>
-    </ul>
-  </li>
-</ul> -->
 <style>
   #but_block1, #but_block2, #but_block3{
     display:none;
@@ -164,7 +152,7 @@ var ajaxHook = 'save-gepaid-alias';
   .block1:hover > #but_block1 {
     display:inline-block;
   }
-   .block2:hover > #but_block2 {
+   .block2:hover >#but_block2 {
     display:inline-block;
   }
    .block3:hover > #but_block3 {
@@ -176,14 +164,14 @@ var ajaxHook = 'save-gepaid-alias';
 </style>
 
       <span class="block1">
-      <select disabled class="label select1 label-primary">
-        <option value="">Michael McClellan</option>
-        <option value="">Teddy Bear</option>
-        <option value="">Peter Parker</option>
-        <option value="">Clarck Kent</option>
+      <select id="t" disabled class="label select1 label-primary">
+        <option value="1">Michael McClellan</option>
+        <option value="2">Teddy Bear</option>
+        <option value="3">Peter Parker</option>
+        <option value="4">Clarck Kent</option>
       </select>
         <!-- <button> -->
-         <img id ="but_block1" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="15px" width="15px" alt="">
+         <img id ="but_block1" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
         <!-- </button> -->
       </span>
 
@@ -191,25 +179,25 @@ var ajaxHook = 'save-gepaid-alias';
 
 
       <span class="block2">
-        <select disabled style = "" value= "type" class="label  select2 label-primary">
-          <option value="">Type A</option>
-          <option value="">Type B</option>
-          <option value="">Type C</option>
-          <option value="">Type D</option>
+        <select id="t2" disabled style = "" value= "type" class="label  select2 label-primary">
+          <option value="1">Type A</option>
+          <option value="2">Type B</option>
+          <option value="3">Type C</option>
+          <option value="4">Type D</option>
         </select>
         <!-- <button> -->
-         <img id  = "but_block2" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="15px" width="15px" alt="">
+         <img id  = "but_block2" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
         <!-- </button> -->
       </span>
       <span class="block3">
-        <select disabled class="label select3 label-primary">
-          <option value="">AE</option>
-          <option value="">BE</option>
-          <option value="">CE</option>
-          <option value="">DE</option>
+        <select id="t3" disabled class="label select3 label-primary">
+          <option value="1">AE</option>
+          <option value="2">BE</option>
+          <option value="3">CE</option>
+          <option value="4">DE</option>
         </select>
         <!-- <button> -->
-          <img id = "but_block3" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="15px" width="15px" alt="">
+          <img id = "but_block3" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
         <!-- </button> -->
       </span>
         
@@ -217,7 +205,7 @@ var ajaxHook = 'save-gepaid-alias';
     </div>
   </div>
 
-<script>
+<!-- <script>
 
     $('#but_block1').click(function(event){
         $('.select1').removeAttr('disabled');
@@ -235,17 +223,72 @@ var ajaxHook = 'save-gepaid-alias';
 
 </script>
 
-<script>
-$('.head').click(function (event) {
-  $(event.target).attr('contentEditable', 'true');
-})
-
-$(current).html( $( current ).text() );
-
-
-</script>
 
 <script>
+$("#but_block1").on('click', function() {
+      var target = $("#t"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight()2
+           2width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+
+$("#but_block2").on('click', function() {
+      var target = $("#t2"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight()2
+           2width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+
+$("#but_block3").on('click', function() {
+      var target = $("#t3"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight()2
+           2width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+</script> -->
+
+
+
+
+
+
+<!-- <script>
 var theContent = $('.head');
  
 $('#save').on('click', function(){
@@ -256,18 +299,22 @@ $('#save').on('click', function(){
 if(localStorage.getItem('newContent')) {
   theContent.html(localStorage.getItem('newContent'));
 }
-</script>
+</script> -->
 
 
   <div class="row">
     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
       <div class="company contact-information">
-        <h2>Company Information</h2>
+        <h2 class="edit1">Company Information 
+          <img id="ee1" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
+      </h2>
         <div class="row">
 
           <!-- The address block -->
-          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-            6025 The Corners Parkway <br> Norcross GA 30092          </div>
+          <div class="edit2" class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            6025 The Corners Parkway <br> Norcross GA 30092            
+              <img style="margin:0 20px 0;" id="ee2" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
+          </div>
           <!-- The address block -->
 
           <!-- The Phone Block -->
@@ -275,14 +322,16 @@ if(localStorage.getItem('newContent')) {
             <table class="company-phones">
               
               <tr>
-                <td>Main:</td>
-                <td><a href="tel:(770) 263-1034">(770) 263-1034</a></td>
+                <td class="main_td">Main:</td>
+                <td class="edit3"> <a  href="tel:(770) 263-1034">(770) 263-1034</a>    <img id="ee3" style="margin:0 20px 0; background-color: yellow;" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
+</td>
               </tr>
               
 
               <tr>
-                <td>Fax:</td>
-                <td><a href="tel:(770) 242-3009">(770) 242-3009</a></td>
+                <td class="fax_td">Fax:</td>
+                <td class="edit4"><a  href="tel:(770) 242-3009">(770) 242-3009</a>    <img id="ee4" style="margin:0 20px 0;" src="http://megaicons.net/static/img/icons_sizes/8/178/256/editing-edit-icon.png" height="25px" width="25px" alt="">
+</td>
               </tr>
               
             </table>
@@ -426,5 +475,147 @@ if(localStorage.getItem('newContent')) {
 </footer>
 <script src="https://mcdb.l-3.com/includes/libs/select2/dist/js/select2.min.js"></script>
 <script src="https://mcdb.l-3.com/includes/apps/mcdb-wondersearch/js/wondersearch.js?t=1488147485" type="text/javascript"></script>
+<script>
+
+$('#ee').click(function (event) {
+  $('#ee').parent().attr('contentEditable', 'true');
+})
+
+
+$('#ee1').click(function (event) {
+  $('#ee1').parent('.edit1').attr('contentEditable', 'true');
+})
+
+$('#ee2').click(function (event) {
+  $('#ee2').parent('.edit2').attr('contentEditable', 'true');
+})
+
+$('#ee4').click(function (event) {
+  $('#ee4').parent('.edit4').attr('contentEditable', 'true');
+})
+
+$('#ee3').click(function (event) {
+  $('#ee3').parent('.edit3').attr('contentEditable', 'true');
+})
+// $(current).html( $( current ).text() );
+
+</script>
+
+<script>
+  
+document.addEventListener('keydown', function (event) {
+  var esc = event.which == 27,
+      nl = event.which == 13,
+      el = event.target,
+      input = el.nodeName != 'INPUT' && el.nodeName != 'TEXTAREA',
+      data = {};
+
+  if (input) {
+    if (esc) {
+      // restore state
+      document.execCommand('undo');
+      el.blur();
+    } else if (nl) {
+      // save
+      data = el.innerHTML;
+
+      // we could send an ajax request to update the field
+      
+      // $.ajax({
+      //   url: window.location.toString(),
+      //   data: data,
+      //   type: 'post'
+      // });
+      
+      el.blur();
+      event.preventDefault();
+    }
+  }
+}, true);
+
+
+
+
+
+</script>
+
+<script>
+
+    $('#but_block1').click(function(event){
+        $('.select1').removeAttr('disabled');
+    })
+
+     $('#but_block2').click(function(event){
+        $('.select2').removeAttr('disabled');
+    })
+
+      $('#but_block3').click(function(event){
+        $('.select3').removeAttr('disabled');
+    })
+
+// $(current).html( $( current ).text() );
+
+</script>
+
+
+<script>
+$("#but_block1").on('click', function() {
+      var target = $("#t"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight(),
+           width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+
+$("#but_block2").on('click', function() {
+      var target = $("#t2"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight(),
+           width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+
+$("#but_block3").on('click', function() {
+      var target = $("#t3"),
+      clone = target.clone().removeAttr('id');
+      clone.val(target.val()).css({
+            overflow: "auto",
+            position: 'absolute',
+            'z-index': 999,
+            left: target.offset().left,
+            top: target.offset().top + target.outerHeight(),
+           width: target.outerWidth()
+      }).attr('size', clone.find('option').length > 10 ? 10 : clone.find('option').length).change(function() {
+            target.val(clone.val());
+      }).on('click blur',function() {
+            $(this).remove();
+      });
+      $('body').append(clone);
+      clone.focus();
+});
+</script>
+
 </body>
 </html>
