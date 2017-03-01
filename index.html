@@ -61,13 +61,14 @@ var ajaxHook = 'save-gepaid-alias';
 
 #non_select1, #non_select2, #non_select3{
   display: inline-block;
-}  
-#non_select1:hover>.label_edit1, #non_select2:hover>.label_edit2, #non_select3:hover>.label_edit3{
-  display:inline-block;
-    -webkit-transition: all 10s ease;;
+      -webkit-transition: all 10s ease;;
   -moz-transition: all 10s ease;;
   -o-transition: all 10s ease;;
   transition: all 10s ease;
+}  
+#non_select1:hover>.label_edit1, #non_select2:hover>.label_edit2, #non_select3:hover>.label_edit3{
+  display:inline-block;
+
 }
 #select1, #select2, #select3{
   display: none;
@@ -80,13 +81,15 @@ var ajaxHook = 'save-gepaid-alias';
 .aft_fade, .aft_fade1, .aft_fade2, .aft_fade3, .aft_fade4, .aft_fade5 {
   display: none;
 }S
-
-.edit:hover > .aft_fade, .edit1:hover .aft_fade1, .edit2:hover > .aft_fade2, .edit3:hover > .aft_fade3, .edit4:hover > .aft_fade4, .edit5:hover > .aft_fade5{
-  display:inline-block;
-  -webkit-transition: all 0.3s ease;;
+.edit, .edit1, .edit2, .edit3, .edit4, .edit5{
+    -webkit-transition: all 0.3s ease;;
   -moz-transition: all 0.3s ease;;
   -o-transition: all 0.3s ease;;
   transition: all 0.3s ease;
+  }
+.edit:hover > .aft_fade, .edit1:hover .aft_fade1, .edit2:hover > .aft_fade2, .edit3:hover > .aft_fade3, .edit4:hover > .aft_fade4, .edit5:hover > .aft_fade5{
+  display:inline-block;
+
 }
 
 .aft_fade1 img, .aft_fade3 img, .aft_fade4 img, .aft_fade5 img{
