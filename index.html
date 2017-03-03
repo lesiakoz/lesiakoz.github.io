@@ -45,17 +45,7 @@ var ajaxHook = 'save-gepaid-alias';
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
-* {
-    -webkit-user-select: none;
-    user-select: none;
-}
 
-input,
-textarea,
-[contenteditable] {
-    -webkit-user-select: text;
-    user-select: text;
-}
 .aft_fade{
   display: none;
 }
@@ -1347,7 +1337,7 @@ textarea,
 
 
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keyup', function (event) {
   var esc = event.which == 27,
       nl = event.which == 13,
       el = event.target,
