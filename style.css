@@ -1,88 +1,59 @@
- 
-body{
-	margin: 0 auto;
-	width:100%;
+ #non_select1, #non_select2, #non_select3{
+  display: inline-block;
+}  
+
+.label_edit1, 
+.label_edit2,
+.label_edit3{
+  opacity: 0;
+         -webkit-transition: all 0.7s ease;;
+  -moz-transition: all 0.7s ease;;
+  -o-transition: all 0.7s ease;;
+  transition: all 0.7s ease;
+
 }
-h3 .social{
-	height:100px;
-	background-image:url("images/SocialProof_websites.jpg");
-	background-position: right bottom;
-    	background-repeat: no-repeat;
+#non_select1:hover>.label_edit1, #non_select2:hover>.label_edit2, #non_select3:hover>.label_edit3{
+  opacity: 1;
 }
+#select1, #select2, #select3{
+  display: none;
+} 
 
-@media (max-width: 360px) {
- 
- 	body{
-		margin: 0 auto;
-		max-width: 360px !important;
-	}
-//Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее.
- 
-}
-
-@media only screen and (max-width: 600px) {
-
-	body{
-		margin: 0 auto;
-		max-width: 600px !important;
-	}
-
-	.social{
-		background:url("images/social.png");
-	}
- 
-//Планшеты в режиме portrait.
- 
+.aft_fade, .aft_fade1, .aft_fade2, .aft_fade3, .aft_fade4, .aft_fade5 {
+  opacity: 0;
+    -webkit-transition: all 0.7s ease;;
+  -moz-transition: all 0.7s ease;;
+  -o-transition: all 0.7s ease;;
+  transition: all 0.7s ease;
 }
 
-@media (max-width: 768px) {
-	body{
-		margin: 0 auto;
-		max-width: 768px !important;
-	}
-	.social{
-		height:100px;
-		background-image:url("images/SocialProof_websites.jpg");
-		background-position: right bottom;
-    		background-repeat: no-repeat;
-	}
- 
-//Планшеты в режиме portrait.
- 
-}
- 
-@media (max-width: 992px) {
-
-	body{
-		margin: 0 auto;
-		max-width: 992px !important;
-	}
-	.social{
-		height:100px;
-		background-image:url("images/SocialProof_websites.jpg");
-		background-position: right bottom;
-    		background-repeat: no-repeat;
-	}
- 
-//Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп.
- 
-}
- 
-@media (max-width: 1382px) {
-
-	body{
-		margin: 0 auto;
-		max-width: 1382px !important;
-	}
-	.social{
-		height:100px;
-		background-image:url("images/SocialProof_websites.jpg");
-		background-position: right bottom;
-    		background-repeat: no-repeat;
-	}
- 
-//Десктоп с большими разрешениями, телевизоры.
- 
+.predit:hover .aft_fade, .predit1:hover .aft_fade1, .predit2:hover > .aft_fade2, .predit3:hover > .aft_fade3, .predit4:hover > .aft_fade4, .predit5:hover > .aft_fade5{
+  opacity: 1;
 }
 
- 
+/*.edit:hover .aft_fade, .edit1:hover .aft_fade1, .edit2:hover > .aft_fade2, .edit3:hover > .aft_fade3, .edit4:hover > .aft_fade4, .edit5:hover > .aft_fade5{
+  opacity: 1;
+}*/
+
+.edit, .edit1,  .edit2,  .edit3,  .edit4, .edit5{
+    display:none;
+}
+.aft_fade1 img, .aft_fade3 img, .aft_fade4 img, .aft_fade5 img{
+  margin-bottom: 1px;
+}
+.predit:hover .aft_fade{
+  opacity:1;
+}
+#return_icon, #return_icon1, #return_icon2, #return_icon3, #return_icon4, #return_icon5{
+  display: none;
+opacity: 0;
+}
+
+@media (max-width:767px) {
+    #return_icon,  #return_icon1,  #return_icon2,  #return_icon3,  #return_icon4,  #return_icon5{
+      opacity:1;
+    }  
+    #return_icon1{
+        margin-left: 13px ;
+    }
+}
