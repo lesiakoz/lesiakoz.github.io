@@ -82,9 +82,8 @@
 			//
 			markers.push(marker);
 			//
-			bounds.extend(marker.position),
+			bounds.extend(marker.position);
 			//
-
 			//
 			marker.addListener('click', function(){
 				populateInfoWindow(this, largeInfowindow);
