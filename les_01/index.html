@@ -42,6 +42,7 @@
 			map: map,
 			title: 'First Marker!'
 		});
+
 		var infowindow = new google.maps.InfoWindow({
 			content: 'Do you ever feel ..........' + 'ready to start again'
 		});
@@ -49,7 +50,7 @@
 		marker.addListener('click', function(){
 			infowindow.open(map, marker);
 		});
-
+	}
 
 		//EXAMPLE OF SINGLE MARKER LESSON 1 part 5-6 
 		// ^END^
