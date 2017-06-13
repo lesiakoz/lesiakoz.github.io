@@ -64,7 +64,7 @@
 
 		var largeInfowindow = new google.maps.InfoWindow();
 
-		var bounds = new google.maps.InfoWindow();
+		var bounds = new google.maps.LatLngBounds();
 		
 		//
 		for (var i = 0; i < locations.length; i++) {
@@ -82,7 +82,7 @@
 			//
 			markers.push(marker);
 			//
-			//bounds.extend(marker.position);
+			bounds.extend(marker.position);
 			//
 			//
 			marker.addListener('click', function(){
