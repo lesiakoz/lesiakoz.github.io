@@ -77,9 +77,67 @@
 		var markers = [];
 
 		function initMap() {
+
+		//create a styles array to use with map
+		var styles = [
+		{
+			featureType: 'water',
+			stylers:[
+			{ color: '#bbbbbb'}
+			]
+		},
+		{
+			featureType: 'administrative',
+			elementType: 'labels.text.stroke',
+			stylers:[
+			{ color: '#bbbbbb'},
+			{ weight: 6 }
+			]
+		},
+		{
+			featureType: 'administrative',
+			elementType: 'labels.text.fill',
+			stylers:[
+			{ color: '#e85113'}
+			]
+		},
+		{
+			featureType: 'road.highway',
+			elementType: 'geometry.stroke',
+			stylers:[
+			{ color: '#efe9e4'},
+			{ lightness: -40}
+			]
+		},
+		{
+			featureType: 'transit.station',
+			stylers:[
+			{ weight: 9},
+			{ hue: '#e85113'}
+			]
+		},
+		{
+			featureType: 'road.highway',
+			elementType: 'labels.icon',
+			stylers:[
+			{ visibility: 'off'}
+			]
+		},
+		{
+			featureType: 'road.highway',
+			elementType: 'geometry.fill',
+			stylers:[
+			{ color: '#efe9e4'},
+			{ lightness: -25}
+			]
+		}
+		];
+
 			map = new google.maps.Map(document.getElementById('map'), {
 				center : {lat: 40.7413549, lng: -73.9980244},
-				zoom: 13
+				zoom: 13,
+				styles: styles,
+				mapTypeControl: false
 		});
 
 		//array for locations with two zminni for each position - title and location
@@ -93,6 +151,12 @@
 		];
 
 		var largeInfowindow = new google.maps.InfoWindow();
+
+		//style a markers
+		var defaultIcon = makeMarkerIcon('0091ff');
+
+
+		var highlightedIcon = makeMarkerIcon('FFFF24');
 		
 		//loop for creation markers
 		for (var i = 0; i < locations.length; i++) {
@@ -103,6 +167,7 @@
 			var marker = new google.maps.Marker({
 				position: position,
 				title: title,
+				icon: defaultIcon,
 				animation: google.maps.Animation.DROP,
 				id: i
 			});
@@ -111,6 +176,14 @@
 			//для натискання
 			marker.addListener('click', function(){
 				populateInfoWindow(this, largeInfowindow);
+			});
+
+			//listeners for mouseover and out
+			marker.addListener('mouseover', function(){
+				this.setIcon(highlightedIcon);
+			});
+			marker.addListener('mouseout', function(){
+				this.setIcon(defaultIcon);
 			});
 		}
 
@@ -151,6 +224,17 @@
 		}
 
 			
+		function makeMarkerIcon(markerColor) {
+			var markerImage = new google.maps.MarkerImage(
+          		'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+          		'|40|_|%E2%80%A2',
+          		new google.maps.Size(21, 34),
+          		new google.maps.Point(0, 0),
+          		new google.maps.Point(10, 34),
+          		new google.maps.Size(21,34));
+        	return markerImage;
+			}
+		
 	</script>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA6OlSSb2fkfjq0g979_ZzgEBC4ja2m5g&v=3&callback=initMap">	
