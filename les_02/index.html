@@ -5,54 +5,26 @@
 	<title>Document</title>
 	<style>
 		
-		html, body {
+		html, body{
 			font-family: Arial, sans-serif;
 			height: 100%;
 			margin:0;
 			padding: 0;
 		}
 
-		#map {
+		#map{
 			height: 100%;
-			bottom: 0px;
-			left: 362px;
-			position: absolute;
-			right: 0px;
-		}
-
-		.options-box {
-			background: #fff;
-			border: 1px solid #999;
-			border-radius:3px;
-			height: 100%;
-			line-height: 35px;
-			padding: 10px 10px 30px 10px;
-			text-align: left;
-			width: 340px;
 		}
 
 
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="options-box">
-			<h1>Find you New NYC Home</h1>
-			<div>
-				<input id ="show-listings" type="button">
-				<input id ="hide-listings" type="button">
-			</div>
-		</div>
-	</div>
 	<div id="map"></div>
 	
 	<script>
-
-	// several different markers creation
-	
 		var map;
 
-		//array for markers
 		var markers = [];
 
 		function initMap() {
@@ -61,7 +33,26 @@
 				zoom: 13
 		});
 
-		//array for locations with two zminni for each position - title and location
+		//EXAMPLE OF SINGLE MARKER LESSON 1 part 5-6 
+		// ^START ^
+
+		// var tribeca = {lat: 40.719526, lng: -74.0089934};
+		// var marker = new google.maps.Marker({
+		// 	position:tribeca,
+		// 	map: map,
+		// 	title: 'First Marker!'
+		// });
+		// var infowindow = new google.maps.InfoWindow({
+		// 	content: 'Do you ever feel ..........' + 'ready to start again'
+		// });
+		// marker.addListener('click', function(){
+		// 	infowindow.open(map, marker);
+		// });
+
+
+		//EXAMPLE OF SINGLE MARKER LESSON 1 part 5-6 
+		// ^END^
+
 		var locations = [
 		{title: 'Park Ave Penthouse', location: {lat: 40.7713024, lng: -73.9632393}},
 		{title: 'Chealse Loft', location: {lat: 40.7444883, lng: -73.9949465}},
@@ -72,32 +63,38 @@
 		];
 
 		var largeInfowindow = new google.maps.InfoWindow();
+
+		var bounds = new google.maps.LatLngBounds();
 		
-		//loop for creation markers
+		//
 		for (var i = 0; i < locations.length; i++) {
 			//
 			var position = locations[i].location;
 			var title = locations[i].title;
 			//
 			var marker = new google.maps.Marker({
+				map: map,
 				position: position,
 				title: title,
 				animation: google.maps.Animation.DROP,
 				id: i
 			});
-			//заносимо маркер в масив
+			//
 			markers.push(marker);
-			//для натискання
+			//
+			bounds.extend(marker.position);
+			//
+			//
 			marker.addListener('click', function(){
 				populateInfoWindow(this, largeInfowindow);
 			});
 		}
 
-
-		document.getElementById('show-listings').addEventListener('click', showListings);
-		document.getElementById('hide-listings').addEventListener('click', hideListings);
+		map.fitBounds(bounds);
 	}
-		// this function creates infowindows and заносить туди тайтли
+		//
+		//
+		//
 		function populateInfoWindow(marker, infowindow) {
 			// ...
 			if (infowindow.marker != marker){
@@ -111,18 +108,7 @@
 			}
 		}
 
-		//функція йтиме по циклу з маркерами і відображатиме їх
-		function showListings() {
-			var bounds = new google.maps.LatLngBounds();
-			//розширення карти, щоб побачити всі маркери
-			for (var i = 0; i < markers.length; i++) {
-				markers[i].setMap(map);
-				bounds.extend(markers[i].position);
-			}
-			map.fitBounds(bounds);
-		}
-
-			
+	
 	</script>
 
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA6OlSSb2fkfjq0g979_ZzgEBC4ja2m5g&v=3&callback=initMap">	
