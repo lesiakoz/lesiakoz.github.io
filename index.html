@@ -39,8 +39,8 @@
 		<div class="options-box">
 			<h1>Find you New NYC Home</h1>
 			<div>
-				<input id ="show-listings" type="button">
-				<input id ="hide-listings" type="button">
+				<input id ="show-listings" type="button" value="Show Listings">
+				<input id ="hide-listings" type="button" value="Hide Listings">
 			</div>
 		</div>
 	</div>
@@ -120,6 +120,13 @@
 				bounds.extend(markers[i].position);
 			}
 			map.fitBounds(bounds);
+		}
+
+		//функція робить маркери невидимими
+		function hideListings() {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
 		}
 
 			
