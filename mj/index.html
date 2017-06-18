@@ -110,7 +110,7 @@
 		<div class="container">
 			<h3>прийшов, побачив, написав</h3>
 			<h1>Молодий журналіст</h1>
-			<a href="#download"><button class="btn wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">Скачати номер</button></a>
+			<a href="#download"><button class="btn wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">завантажити номер</button></a>
 		</div>
 	</div>
 	<a name="zahid"></a>
@@ -165,11 +165,13 @@
 			<p class="descr">Перегляньте презентацію номера e pdf форматі</p>
 
 			<div class="new_show_magazine">
-				<iframe style="width:800px; height:700px;" frameborder="0" src="http://lesiakoz.github.io/image/joung_jour.pdf"></iframe>
+				<iframe style="width:800px; height:700px;" frameborder="0" marginheight="15" marginwidth="15"
+
+ src="http://lesiakoz.github.io/image/joung_jour.pdf"></iframe>
 			</div>
 			
 			
-			<a href="https://www.dropbox.com/s/sb8s6budqpsfgom/fdf.en.pdf?dl=1"><button style="background-color:black; margin-top: 40px;" class="btn wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">Скачати номер</button></a>
+			<a href="https://www.dropbox.com/s/sb8s6budqpsfgom/fdf.en.pdf?dl=1"><button style="background-color:black; margin-top: 40px;" class="btn wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">завантажити</button></a>
 			<a name="download"></a>
 <!-- 			<div id="portfolio-wrap" class="clearfix">
 				<div class="portfolio-item">
@@ -242,14 +244,18 @@
 			<p class="descr">Читайте у цьому номері</p>
 		<div class="new_pre_zm">
 			<div class="new_zmist">
-				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, amet.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur adipisicing.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s">Lorem ipsum dolor sit amet, consectetur.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur.<br><span> ст.14</span></h4>
-				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit.<br><span> ст.14</span></h4>
+				<h4 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Робота під час навчання:реальний досвід<br><span> ст.1</span></h4>
+				<h4 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Розмаїття дійств та єднання
+поколінь: «Журвесна 2017»<br><span> ст.1</span></h4>
+				<h4 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Як це: вивчати
+журналістику не в ІЖ? <br><span> ст.2</span></h4>
+				<h4 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Звернення Володимира Різуна до студентів Інституту журналістики<br><span> ст.3</span></h4>
+				<h4 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s">Журвесна-2017: Як це було<br><span> ст.8</span></h4>
+				<h4 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Що робити журналісту,
+коли нація сходить з розуму?<br><span> ст.10</span></h4>
+				<h4 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">3 способи
+викрасти пароль<br><span> ст.11</span></h4>
+	
 			</div>
 			</div>
 
@@ -489,6 +495,48 @@
 	</div>
 	</div>
 
+<style>
+#tab2, #tab3 {position: fixed; }
+
+.menu1 > a,
+.menu1 #tab2:target ~ a:nth-of-type(1),
+.menu1 #tab3:target ~ a:nth-of-type(1),
+.menu1 > div { padding: 5px; border: 1px solid #aaa; }
+
+.menu1 > a { line-height: 28px; background: #fff; text-decoration: none; }
+
+#tab2,
+#tab3,
+.menu1 > div,
+.menu1 #tab2:target ~ div:nth-of-type(1),
+.menu1 #tab3:target ~ div:nth-of-type(1) {display: none; }
+
+.menu1 > div:nth-of-type(1),
+.menu1 #tab2:target ~ div:nth-of-type(2),
+.menu1 #tab3:target ~ div:nth-of-type(3) { display: block; }
+
+.menu1 > a:nth-of-type(1),
+.menu1 #tab2:target ~ a:nth-of-type(2),
+.menu1 #tab3:target ~ a:nth-of-type(3) { border-bottom: 2px solid #fff; }
+</style>
+
+<div id="team" class="box">
+		<div class="container" >	
+		<h2 class="title">Наша команда</h2>
+			<p class="descr">Люди, завдяки яким все так, як є.</p>		
+<div class="menu1">
+  <br id="tab2"/><br id="tab3"/>
+  <a href="#tab1">CSS</a><a href="#tab2">HTML</a><a href="#tab3">Дополнительно</a>
+  <div>вкладка 1</div>
+  <div>вкладка 2</div>
+  <div>вкладка 3</div>
+</div>		
+		</div>
+	</div>
+
+			<!-- </div> -->
+
+
 <a name="team"></a>
 
 	<div id="team" class="box">
@@ -577,6 +625,13 @@
 	</div>
 
 			</div>
+
+
+
+
+
+
+
 
 	<div id="brand">
 
