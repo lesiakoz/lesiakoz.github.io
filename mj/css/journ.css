@@ -106,7 +106,7 @@ table {
 	left:0;
 	right:0;
 	width:100%;
-	height: 
+	height: 100px;
 	z-index: 9999;
 }
 #header.default{
@@ -627,8 +627,14 @@ input:-o-placeholder{
 	text-align: left;
 	padding: 7px 0;
 }
+
+#about_zmist{
+	text-align: center;
+	padding-top: 120px;
+}
 .new_pre_zm{
 	text-align: center;
+	padding-top: 5px;
 }
 .new_zmist{
 	text-align: center;
@@ -652,4 +658,33 @@ input:-o-placeholder{
 }
 .fly_head_left span, .fly_head_right span{
 	font-style: italic;
+}
+
+#team_read_cat{
+	text-align: center;
+}
+#team_read_cat p.descr{
+	margin-bottom: 45px;
+}
+#new_read_box{
+	text-align: left;
+}
+
+.content-wrap a{
+	font-style: italic;
+}
+.content-wrap h2{
+	font:24px/28px Ubuntu, Arial, sans-serif;
+	color:#555;
+	font-weight: 500;
+	font-style: italic;
+	margin-top: 20px;
+}
+.content-wrap p.lid{
+	font:16px/18px Ubuntu, Arial, sans-serif;
+	color:#000;
+	font-weight: 300;
+	margin-bottom: 15px;
+	font-style: italic;
+	margin-top: 20px;
 }
