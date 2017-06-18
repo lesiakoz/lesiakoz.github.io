@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OnepageSite</title>
+
+	<script type="text/javascript">
+        function setClear(elem) {
+            if (elem.value == elem.defaultValue) {
+                elem.value = '';
+            } 
+        }
+        
+        function setDefault(elem) {
+            if (!elem.value) {
+                elem.value = elem.defaultValue;
+            } 
+        }
+    </script>
+
+	<link href="css/animate.css" type="text/css" rel="stylesheet" />
+	<link href="css/journ.css" type="text/css" rel="stylesheet" />
+	
+	<!-- JQ -->
+	<!-- https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js -->
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Фикcированная шапка при скролле
+			$("#header").removeClass("default");
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 20) {
+					$("#header").addClass("default").fadeIn('fast');
+				} else {
+					$("#header").removeClass("default").fadeIn('fast');
+				};
+			});
+		});
+	</script>
+
+
+
+	<!-- Для підвантаження розкладу -->
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+   		$(".show-more").click(function(){
+     		$(this).find(".more").first().slideDown("slow")
+     		// $(this).find(".show-more").first().css({"display":"none"})(так було спочатку) я стер, оскільки в мене всього раз повторюються події, також я закоментував шуканий у цьому рядку дів .show-more
+		
+
+	})
+	});
+	</script>
+
+
+	<!-- Для підвантаження розкладу. Кінець-->
+
+
+	<!-- Для підвантаження команди -->
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+   		$(".show-more2").click(function(){
+     		$(this).find(".more2").first().slideDown("slow")
+	})
+	});
+	</script>
+
+
+
+
+</head>
+<body>
+	<div id="wrapper">
+	
+		<div id="header">
+			<div class="container clearfix">
+				<div class="logo">
+					<a href="#">
+						<img src="images/logo.png" alt="" />
+					</a>
+				</div>
+				<ul class="nav">
+					<li>
+						<a href="#zahid">Про газету</a>
+					</li>
+					<li>
+						<a href="#spikers">Переглянути</a>
+					</li>
+					<li>
+						<a href="#rozklad">Матеріали</a>
+					</li>
+					<li>
+						<a href="#team">Команада</a>
+					</li>
+					<li>
+						<a href="#contact">Контакти</a>
+					</li>
+				</ul>
+
+			</div>
+		</div> 
+
+	</div>
+	<div id="home">
+		<div class="container">
+			<h3>прийшов, побачив, написав</h3>
+			<h1>Молодий журналіст</h1>
+			<a href="#download"><button class="btn wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">Скачати номер</button></a>
+		</div>
+	</div>
+	<a name="zahid"></a>
+	<div id="service" class="box">
+		<div class="container">
+			<h2 class="title">Про газету</h2>
+			<p class="descr">Слово головного редактора</p>
+		<div class="new_redactor">
+			<div class="new_red_photo">
+				<img src="images/2aa.png" alt="">
+			</div>
+			<div class="new_red_text">
+				<p>Шановний читачу, <br> 
+				Якщо ти тримаєш в руках цю газету, то сталося неймовірне і ми знайшли кошти на друк і розповсюдження видання. Тож, готовий посперечатися, що ти читаєш це з екрану. Звісно, це якщо ти не член дипломної комісії в Інституті журналістики (на захист диплому ми кілька примірників таки роздрукуємо). </p>  
+				<p>Але подалі від дріб’язковості – до суті: перед тобою «Молодий журналіст». </p>
+				<p>Це оновлений формат газети Інституту журналістики, яка мала статус загальнонаціональної. З 1958 по 2005 рік це видання було місцем першої практики для багатьох студентів. Сьогодні у форматі дипломного проекту ми відновили його для наступних поколінь.</p>
+				<p>У нашій газеті, студент-журналіст знайде безліч корисної інформації: звернення викладачів та випускників інституту, відгуки колег з інших ВНЗ та практичні поради на теми, які у свій час турбували кожного з нас: як поєднувати навчання з роботою, яку спеціалізацію обрати та як з першого разу скласти іспит з медіа-права. </p>
+				<p>Обіцяємо, що у «Молодому журналісті» крім корисної інформації ти обов’язково знайдеш цікаву, таку, як відповіді адміністрації інституту на злободенні питання чи короткий інструктаж з кібербезпеки. </p>
+				<p>Окрім газети, яку ти зараз читаєш, наш проект включає в себе повністю розроблену концепцію видання, дизайн, фірмовий стиль та сайт «Молодого журналіста». Доля наших напрацювань опиниться у руках Інституту відразу після захисту диплому: ми запропонуємо кафедрі періодичної преси взяти проект під подальше кураторство і випускати наступні номери разом з студентами.
+				Чи відновить дипломний проект славу колишнього «Молодого журналіста»  покаже час, а поки – приємного читання. 
+				</p>
+	</div>
+</div>
+	<!-- 		<div id="service-wrap" class="clearfix">
+				<div class="service-item commerce wow bounceInUp" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="2s">
+					<h5 class="title">Фестиваль</h5>
+					<p>
+						Починаючи з 1967 року, щорічне свято в Інституті журналістики. Об’єднує студентів, викладачів та випускників ІЖ.
+					</p>
+				</div>
+				<div class="service-item responsive  wow bounceInUp" data-wow-offset="0" data-wow-delay="0.4s" data-wow-duration="2s">
+					<h5 class="title">Студентський Марафон</h5>
+					<p>
+						5 діб нонстоп роботи студентських інформаційних редакцій. Стрімке професійне занурення.
+					</p>
+				</div>
+				<div class="service-item security wow bounceInUp" data-wow-offset="0" data-wow-delay="0.6s" data-wow-duration="2s">
+					<h5 class="title">Унікальний лекторій</h5>
+					<p>
+						Щоденні зустрічі з досвідченими журналістами та фахівцями у сфері медіа. Безкоштовий та інтенсивний тренінг. 
+					</p>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+<a name="spikers"></a>
+<a name="download"></a>
+	<div id="portfolio" class="box">
+		<div class="container">
+			<h2 class="title">Погортати</h2>
+			<p class="descr">Перегляньте презентацію номера e pdf форматі</p>
+
+			<div class="new_show_magazine">
+				<iframe style="width:800px; height:700px;" frameborder="0" src="http://lesiakoz.github.io/image/joung_jour.pdf"></iframe>
+			</div>
+			
+			
+			<a href="https://www.dropbox.com/s/sb8s6budqpsfgom/fdf.en.pdf?dl=1"><button style="background-color:black; margin-top: 40px;" class="btn wow fadeInUp" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s">Скачати номер</button></a>
+			<a name="download"></a>
+<!-- 			<div id="portfolio-wrap" class="clearfix">
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/one.jpg" alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Андрій Куликов</h5>
+						<span>Журналіст, телеведучий</span>
+					</div>
+				</div>
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/two.jpg" alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Cевгіль Мусаєва-Боровик</h5>
+						<span>Головний редактор УП</span>
+					</div>
+				</div>
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/three.jpg"  alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Валерія Чачибая</h5>
+						<span>Співзасновник Радіо «Аристократи»</span>
+					</div>
+				</div>
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/four.jpg" alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Денис Бігус</h5>
+						<span>Журналіст-розслідувач</span>
+					</div>
+				</div>
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/five.jpg"  alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Дмитро Гнап</h5>
+						<span>журналіст-розслідувач</span>
+					</div>
+				</div>
+				<div class="portfolio-item">
+					<a href="">
+						<img src="images/six.jpg"  alt="" />
+					</a>
+					<div class="p-item-footer">
+						<h5 class="title">Алла Мазур</h5>
+						<span>журналіст, телеведуча</span>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+<!-- try smth -->
+
+
+
+<!-- try snth end -->
+<a name="rozklad"></a>
+
+	<div id="about"  class="box">
+		<div class="container">
+			<h2 class="title">Зміст</h2>
+			<p class="descr">Читайте у цьому номері</p>
+		<div class="new_pre_zm">
+			<div class="new_zmist">
+				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, amet.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur adipisicing.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s">Lorem ipsum dolor sit amet, consectetur.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInLeftBig fly_head_left data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit amet, consectetur.<br><span> ст.14</span></h4>
+				<h1 class="wow fadeInRightBig fly_head_right data-wow-delay="0.2s" data-wow-duration="2.5s"">Lorem ipsum dolor sit.<br><span> ст.14</span></h4>
+			</div>
+			</div>
+
+<!-- 			<p class="descr">Актуальний розклад подій</p>
+			<div class="about-wrap">
+				<div class="about-item clearfix">
+					<div class="about-text wow fadeInLeftBig left text-right" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Понеділок 11.10 14:10</span>
+							<br/>
+Урочисте Відкриття</h5>
+						<p>
+							Відкриття, промова директора Інституту 
+журналістикик Володимира Різуна.
+						</p>
+					</div>
+					<div class="about-img left">
+						<img src="images/1a.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text  wow fadeInRightBig right text-left" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Понеділок 11.10 15:50</span>
+							<br/>
+							Лекція Андрія Куликова
+						</h5>
+						<p>
+							Особистий досвід, медіаосвіта та 
+труднощі на шляху до неї.
+						</p>
+					</div>
+					<div class="about-img right">
+						<img src="images/2aa.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text  wow fadeInLeftBig left text-right" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Вівторок 12.10 14:10</span>
+							<br/>
+							Лекція Севгіль Мусаєвої
+						</h5>
+						<p>
+							Як зробити цікавим, корисним та актуальним розділ 
+про культуру в сучасному Інтернет-виданні
+						</p>
+					</div>
+					<div class="about-img left">
+						<img src="images/3a.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text wow fadeInRightBig right text-left" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Середа 12.10 15:50</span>
+							<br/>
+							Конкурс Студентських Робіт
+
+						</h5>
+						<p>
+							Презентація власноруч створених видань. 
+Конкурс на найкращу статтю.
+						</p>
+					</div>
+					<div class="about-img right">
+						<img src="images/4a.png"  alt="" />
+					</div>
+				</div>
+
+
+
+				<div class="show-more" style="z-index:9">
+					<a class="about-link" onclick="this.style.display='none';">
+					Натисніть
+					<br/>
+					Для 
+					<br/>
+					Продовження
+					<br/>
+					...
+				</a>
+				
+				
+
+
+
+
+
+
+
+<! Для підвантаження розкладу. Початок -->
+
+
+<!-- це приклад з сайту з логікою підвантаженння 
+ 
+<div class="show-more" style="z-index:9"><span>showmore</span>
+	<div class="more" style="display:none;">
+		<div class="block"></div><div class="block">1</div><div class="block"></div>
+		<div class="block"></div><div class="block">2</div><div class="block"></div>
+
+		<div class="show-more" style="z-index:99"><span>showmore</span>
+			<div class="more" style="display:none;">
+				<div class="block"></div><div class="block">3</div><div class="block"></div>
+				<div class="block"></div><div class="block">4</div><div class="block"></div>
+ 
+
+			</div>
+		</div>
+ 
+	</div>
+</div>
+
+
+
+
+		<div class="more" style="display:none;">	
+
+			<div class="about-item clearfix" style="">
+					<div class="about-text wow fadeInLeftBig left text-right" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Понеділок 11.10 14:10</span>
+							<br/>
+Урочисте Відкриття</h5>
+						<p>
+							Відкриття, промова директора Інституту 
+журналістикик Володимира Різуна.
+						</p>
+					</div>
+					<div class="about-img left">
+						<img src="images/1a.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text  wow fadeInRightBig right text-left" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Понеділок 11.10 15:50</span>
+							<br/>
+							Лекція Андрія Куликова
+						</h5>
+						<p>
+							Особистий досвід, медіаосвіта та 
+труднощі на шляху до неї.
+						</p>
+					</div>
+					<div class="about-img right">
+						<img src="images/2aa.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text  wow fadeInLeftBig left text-right" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Вівторок 12.10 14:10</span>
+							<br/>
+							Лекція Севгіль Мусаєвої
+						</h5>
+						<p>
+							Як зробити цікавим, корисним та актуальним розділ 
+про культуру в сучасному Інтернет-виданні
+						</p>
+					</div>
+					<div class="about-img left">
+						<img src="images/3a.png"  alt="" />
+					</div>
+				</div>
+
+				<div class="about-item clearfix">
+					<div class="about-text wow fadeInRightBig right text-left" data-wow-delay="0" data-wow-offset="150" data-wow-duration="1s">
+						<h5 class="title">
+							<span>Середа 12.10 15:50</span>
+							<br/>
+							Конкурс Студентських Робіт
+
+						</h5>
+						<p>
+							Презентація власноруч створених видань. 
+Конкурс на найкращу статтю.
+						</p>
+					</div>
+					<div class="about-img doit right">
+						<img src="images/4a.png"  alt="" />
+					</div>
+				</div> -->
+
+
+
+		<!-- 	<div class="show-more" style="z-index:99">
+					<a class="about-link">
+					Натисніть
+					<br/>
+					Для 
+					<br/>
+					Продовження
+					<br/>
+					...
+				</a>
+				</div> -->
+
+				<!-- ^^^^закоментував це відповідно до коменту у скріпті зверху. Воно не потрібне -->
+
+<!-- 				<div>
+					<a class="about-link">
+					Журвесна 
+					<br/>
+					Вже
+					<br/>
+					Закінчилась
+					<br/>
+					...
+				</a>
+
+
+
+
+
+	</div>
+</div>
+ -->
+
+
+				<!-- Для підвантаження розкладу. Кінець.-->
+
+
+
+
+
+
+
+<!-- 
+			</div>
+		</div>  -->
+	</div>
+	</div>
+
+<a name="team"></a>
+
+	<div id="team" class="box">
+		<div class="container">
+			<h2 class="title">Наша команда</h2>
+			<p class="descr">Люди, завдяки яким все так, як є.</p>
+			<div class="team-wrap clearfix">
+				<div class="team-item">
+					<img src="images/team1.png" height="221" width="221" alt="" />
+					<h5 class="title">Анастасія Чернуха</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+						<a href="#" class="ic-twitter">&nbsp;</a>
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-pn">&nbsp;</a>
+					</div>
+				</div>
+				<div class="team-item">
+					<img src="images/team2.png" height="221" width="221" alt="" />
+					<h5 class="title">Дар'я Швидкова</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+						<a href="#" class="ic-twitter">&nbsp;</a>
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-gl">&nbsp;</a>
+					</div>
+				</div>
+				<div class="team-item">
+					<img src="images/team3.png" height="221" width="221" alt="" />
+					<h5 class="title">Наталія Яковлева</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-pn">&nbsp;</a>
+					</div>
+				</div>
+
+			
+<!-- Підвантаження 2. Новий бій -->
+
+				<div class="show-more2" style="z-index:9;">
+						<button  class="btn-team wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.2s" data-wow-duration="1s" onclick="this.style.opacity='0.0';">Показати більше</button>
+				
+
+				<div class="more2" style="display:none; margin-top:-120px;">	
+					<div class="team-item">
+					<img src="images/team1.png" height="221" width="221" alt="" />
+					<h5 class="title">Анастасія Чернуха</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+						<a href="#" class="ic-twitter">&nbsp;</a>
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-pn">&nbsp;</a>
+					</div>
+				</div>
+				<div class="team-item">
+					<img src="images/team2.png" height="221" width="221" alt="" />
+					<h5 class="title">Дар'я Швидкова</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+						<a href="#" class="ic-twitter">&nbsp;</a>
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-gl">&nbsp;</a>
+					</div>
+				</div>
+				<div class="team-item">
+					<img src="images/team3.png" height="221" width="221" alt="" />
+					<h5 class="title">Наталія Яковлева</h5>
+					<p class="cat">Головний організатор</p>
+					<div class="social">
+
+						<a href="#" class="ic-facebook">&nbsp;</a>
+						<a href="#" class="ic-pn">&nbsp;</a>
+					</div>
+				</div>
+
+				</div>
+				</div>	
+
+
+
+
+<!-- Кінецть підвантаження 2 -->				
+		</div>
+	</div>
+
+			</div>
+
+	<div id="brand">
+
+		<div class="container">
+			<a href="#">
+				<img src="images/envato.jpg" height="30" width="161" alt="" />
+			</a>
+			<a href="#">
+				<img src="images/wordpress.png" height="42" width="186" alt="" />
+			</a>
+			<a href="#">
+				<img src="images/tuts+.jpg" height="41" width="141" alt="" />
+			</a>
+			<a href="#">
+				<img src="images/microlancer-copy.jpg" height="42" width="167" alt="" />
+			</a>
+		</div>
+	</div>
+
+<a name="contact"></a>
+
+	<div id="contact" class="box">
+		<div class="container">
+			<h2 class="title">Зворотній зв'язок</h2>
+			<p class="descr">Будь ласка, надсилайте сюди свої побажання, пропозиції та запитання</p>
+			<form action="#" id="message">
+				<div class="clearfix">
+					<div class="left">
+
+
+					
+						<input type="hidden" name="project_name" value="Site Namfe">
+						<input type="hidden" name="admin_email" value="artymovich96@gmail.com">
+						<input type="hidden" name="form_subject" value="Form Subjfect">
+					
+	
+
+
+
+						<fieldset>
+							<p>
+								<input type="text" placeholder="your name*" required/>
+							</p>
+						</fieldset>
+						<fieldset>
+							<p>
+								<input type="text" placeholder="your e-mail*" required/>
+							</p>
+						</fieldset>
+						<fieldset>
+							<p>
+								<input type="text" placeholder="subject" required/>
+							</p>
+						</fieldset>
+						
+					</div>
+					<div class="right">
+						<textarea cols="1" rows="1" placeholder="YOUR MESSAGE*"></textarea>
+					</div>
+
+				</div>
+				<button><input type="submit" value="Надіслати" class="btn wow tada" data-wow-delay="0.1" data-wow-offset="150" data-wow-duration="1.3s" /></button>
+			</form>
+	
+<!-- 
+	<form>
+		
+		Віднайдено в мережі, приклад за яким робив свою форму.
+	
+		<input type="hidden" name="project_name" value="Site Name">
+		<input type="hidden" name="admin_email" value="artymovich96@gmail.com">
+		<input type="hidden" name="form_subject" value="Form Subject">
+	
+		<input type="text" name="Name" placeholder="You name..." required><br>
+		<input type="text" name="E-mail" placeholder="You E-mail..." required><br>
+		<input type="text" name="Phone" placeholder="You phone..."><br>
+		<button>Send</button>
+
+	</form> -->
+	
+
+		</div>
+	</div>
+
+<div style="
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.9477985329042!2d30.467888883563376!3d50.47053583864593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7a4ea9e59d818269!2z0JjQvdGB0YLQuNGC0YPRgiDQnNC10LbQtNGD0L3QsNGA0L7QtNC90YvRhSDQntGC0L3QvtGI0LXQvdC40Lkg0JrQuNC10LLRgdC60L7Qs9C-INCd0LDRhtC40L7QvdCw0LvRjNC90L7Qs9C-INGD0L0t0YLQsCDQuNC8LtCiLtCo0LXQstGH0LXQvdC60L4!5e0!3m2!1sru!2sua!4v1476381811977" width="100%" height="350" frameborder="0" style="border:0, " allowfullscreen></iframe>
+</div>
+
+	<div id="copyright">
+		<div class="container clearfix">
+			<p class="left">&copy;  Copyright 2014 Lesia Kozub &amp; Serhiy Artymovych</p>
+			<div class="social">
+				<a href="#" class="ic-twitter black">&nbsp;</a>
+				<a href="#" class="ic-facebook black">&nbsp;</a>
+				<a href="#" class="ic-pn black">&nbsp;</a>
+				<a href="#" class="ic-gl black">&nbsp;</a>
+
+			</div>
+		</div>
+	</div>
+
+<script>
+	new WOW().init();
+</script>
+</body>
+</html>
