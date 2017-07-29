@@ -1,0 +1,471 @@
+/* Base styles */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #21252b;
+  color: #9da5b3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+h4,
+h5,
+h6 {
+  color: #9da5b3;
+}
+
+a {
+  color: #558efc;
+  text-decoration: none;
+  transition: .2s background, .2s color;
+}
+
+a:focus,
+a:hover {
+  color: #4a7ad7;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
+  color: white;
+}
+
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ol li,
+ul li {
+  padding: 0;
+  margin: 0 0 .5rem 1rem;
+}
+
+pre {
+  background-color: #282c34;
+  border-radius: .25rem;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+pre em {
+  color: #98c379;
+  font-style: normal;
+}
+
+code {
+  background-color: #282c34;
+  border-radius: .25rem;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: #d19a6b;
+  padding: .1rem .25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Info */
+#info {
+  font-size: .9rem;
+  background: #fff999;
+  z-index: 100;
+  color: #1b1d23;
+  padding: .75rem;
+  display: block;
+}
+
+#info .avatar {
+  float: right;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+#info .link {
+  color: #558efc;
+}
+
+#info :first-child {
+  margin-top: 0;
+}
+
+#info :last-child {
+  margin-bottom: 0;
+}
+
+/* Nav */
+#app-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 18rem;
+  font-size: .9rem;
+  overflow-y: auto;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  padding: 0 1.5rem 4rem 1.5rem;
+}
+
+#app-logo {
+  margin: 1.5rem 0 1rem 0;
+}
+
+#app-logo img {
+  max-width: 100%;
+}
+
+.instructions {
+  text-align: center;
+  font-size: .8rem;
+  color: #9da5b3;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Hide panels initially to prevent flickering on page load */
+[data-modes] {
+  display: none;
+}
+
+.sponsor-banner {
+  width: 100%;
+  height: auto;
+  color: inherit;
+  font-size: .8rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.sponsor-title {
+  margin-top: 2rem;
+}
+
+.sponsor-banner img {
+  max-width: 100%;
+  max-height: 2rem;
+  height: auto;
+  margin: 0 auto .25rem auto;
+  display: block;
+}
+
+.sponsor-banner small {
+  color: #9da5b3;
+  display: block;
+  margin-bottom: .25rem;
+}
+
+#credits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 18rem;
+  background: #21252b;
+  text-align: center;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+}
+
+/* Editor */
+#app-body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 18rem;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.CodeMirror {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  height: 100%;
+}
+
+/* Donation form */
+.donation-form {
+  margin: 1.5rem 0;
+}
+
+/* Nanobar */
+.nanobar {
+  z-index: 1000;
+  height: .4rem;
+  overflow: hidden;
+}
+
+.nanobar .bar {
+  background-color: #558efc;
+}
+
+/* Button radios */
+.button-radios {
+  display: table;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.button-radios .radio {
+  width: 25%;
+  display: table-cell;
+}
+
+.button-radios .radio label {
+  text-align: center;
+  font-size: .9rem;
+  border: solid 2px #1b1d23;
+  background: #1b1d23;
+  color: #9da5b3;
+  transition: none;
+  display: block;
+  padding: .4rem 0;
+}
+.button-radios .radio label:hover {
+  border-color: #558efc;
+  outline: none;
+}
+
+.button-radios .radio:first-child label {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+
+.button-radios .radio:last-child label {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+.button-radios .radio input:checked + label {
+  color: white;
+  background-color: #558efc;
+  border-color: #558efc;
+}
+
+.button-radios .radio input:focus + label {
+  background-color: #3c75e3;
+  border-color: #3c75e3;
+}
+
+.button-radios .radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: .9rem;
+  color: #9da5b3;
+}
+
+/* Selects */
+.select-box {
+  position: relative;
+  padding: 0;
+  margin: .25rem 0 0 0;
+  width: 100%;
+  border-radius: .25rem;
+  overflow: hidden;
+  background-color: #1b1d23;
+  border: none;
+  transition: .2s background;
+}
+
+.select-box select {
+  height: 2.25rem;
+  padding: .4rem .5rem;
+  width: 100%;
+  border: solid 2px #1b1d23;
+  border-radius: .25rem;
+  font-family: inherit;
+  font-size: .9rem;
+  color: white;
+  box-shadow: none;
+  background-color: #1b1d23;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-box select:focus {
+  outline: none;
+  border-color: #558efc;
+}
+
+.select-box::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: .6rem;
+  right: .5rem;
+  background-position: center;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMzk1IDczNnEwIDEzLTEwIDIzbC00NjYgNDY2cS0xMCAxMC0yMyAxMHQtMjMtMTBsLTQ2Ni00NjZxLTEwLTEwLTEwLTIzdDEwLTIzbDUwLTUwcTEwLTEwIDIzLTEwdDIzIDEwbDM5MyAzOTMgMzkzLTM5M3ExMC0xMCAyMy0xMHQyMyAxMGw1MCA1MHExMCAxMCAxMCAyM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=');
+  pointer-events: none;
+}
+
+/* Checkboxes */
+.custom-checkbox:not(:checked),
+.custom-checkbox:checked {
+  position: absolute;
+  left: -9999rem;
+}
+
+.custom-checkbox:not(:checked) + label,
+.custom-checkbox:checked + label {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
+.custom-checkbox:not(:checked) + label::before,
+.custom-checkbox:checked + label::before {
+  content: '';
+  position: absolute;
+  left:0;
+  top: .2rem;
+  width: 1rem;
+  height: 1rem;
+  background: #3a3f4b;
+  border-radius: .25rem;
+}
+
+.custom-checkbox:not(:checked) + label::after,
+.custom-checkbox:checked + label::after {
+  content: '✔';
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+  font-size: 1rem;
+  line-height: 0.8;
+  color: #ccc;
+  transition: .2s all;
+}
+
+.custom-checkbox:not(:checked) + label::after {
+  opacity: 0;
+  transform: scale(0);
+}
+.custom-checkbox:checked + label::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-checkbox:disabled:not(:checked) + label::before,
+.custom-checkbox:disabled:checked + label::before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+.custom-checkbox:disabled:checked + label::after {
+  color: #999;
+}
+
+.custom-checkbox:disabled + label {
+  color: #aaa;
+}
+
+.custom-checkbox:checked:focus + label::before,
+.custom-checkbox:not(:checked):focus + label::before {
+  border: 2px solid #558efc !important;
+}
+
+/* Buttons */
+.button {
+  border: solid 2px #558efc;
+  background: #558efc;
+  border-radius: .25rem;
+  font-family: inherit;
+  color: white;
+  box-shadow: none;
+  background-color: #558efc;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: .6rem 1rem;
+  transition: .2s background, .2s border;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button:focus,
+.button:hover {
+  color: white;
+  outline: none;
+  background-color: #3c75e3;
+  border-color: #3c75e3;
+}
+
+.button.button-block {
+  width: 100%;
+}
+
+/* Pages */
+.page {
+  max-width: 40rem;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.page .logo img {
+  width: 100%;
+  max-width: 30rem;
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+/* Alerts */
+.alert {
+  background-color: #282c34;
+  border-radius: .25rem;
+  padding: 1.25rem;
+}
+
+.alert :first-child {
+  margin-top: 0;
+}
+
+.alert :last-child {
+  margin-bottom: 0;
+}

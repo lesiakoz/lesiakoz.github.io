@@ -1,0 +1,216 @@
+/* eslint-env browser, jquery */
+/* global CodeMirror, Nanobar */
+$(function() {
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  // Variables
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  var
+    editor,
+    progress = new Nanobar();
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  // Functions
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Restore options
+  function restoreOptions() {
+    // Inputs
+    $('#app-form :input').not(':radio, :checkbox, [name="code"]').each(function() {
+      var value = localStorage.getItem('option-' + this.name);
+      if(value) this.value = value;
+    });
+
+    // Radio buttons
+    $('#app-form :radio').each(function() {
+      var value = localStorage.getItem('option-' + this.name);
+      if(this.value === value) this.checked = true;
+    });
+
+    // Checkboxes
+    $('#app-form :checkbox').each(function() {
+      var value = localStorage.getItem('option-' + this.name);
+      if(value === 'true') this.checked = true;
+    });
+
+    // Set editor mode
+    editor.setOption('mode', $(':radio[name="mode"]:checked').val());
+
+    // Set preferred line length
+    editor.setOption('rulers',
+      $('#line-length').val() === '0' ?
+      // null for no ruler
+      null :
+      // array of integers to specify ruler columns
+      [parseInt($('#line-length').val())]
+    );
+
+    // Show appropriate panels based on mode
+    toggleModeOptions();
+  }
+
+  function saveOptions() {
+    // Inputs
+    $('#app-form :input').not(':radio, :checkbox, [name="code"]').each(function() {
+      if(!this.name) return;
+      localStorage.setItem('option-' + this.name, this.value);
+    });
+
+    // Radio buttons
+    $('#app-form :radio').each(function() {
+      if(this.checked) localStorage.setItem('option-' + this.name, this.value);
+    });
+
+    // Checkboxes
+    $('#app-form :checkbox').each(function() {
+      localStorage.setItem('option-' + this.name, this.checked);
+    });
+  }
+
+  function toggleModeOptions() {
+    $('[data-modes]').each(function() {
+      var
+        mode = $('input[name="mode"]:checked').val(),
+        allowed = this.getAttribute('data-modes').split(',');
+
+      $(this).toggle($.inArray(mode, allowed) > -1);
+    });
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  // Event handlers
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Handle mode changes
+  $(':radio[name="mode"]').on('change', function() {
+    if(this.value === 'api') {
+      editor.setOption('mode', 'text/plain');
+    } else {
+      editor.setOption('mode', this.value);
+    }
+    toggleModeOptions();
+  });
+
+  // Handle indent changes
+  $('#indent').on('change', function() {
+    editor.setOption('indentUnit', this.value === 'tabs' ? 4 : parseInt(this.value)),
+    editor.setOption('indentWithTabs', this.value === 'tabs');
+  });
+
+  // Handle preferred line length changes
+  $('#line-length').on('change', function() {
+    var value = parseInt(this.value);
+    value = value > 0 ? [value] : null;
+    editor.setOption('rulers', value);
+  });
+
+  // Save options as they get changed
+  $('#app-form :input').on('change', saveOptions);
+
+  // Clean
+  $('#app-form').on('submit', function(event) {
+    var
+      data,
+      endpoint,
+      code = editor.getValue(),
+      mode = $('input[name="mode"]:checked').val();
+
+    event.preventDefault();
+
+    // Empty requests do nothing
+    if(!$.trim(code)) {
+      progress.go(100);
+      editor.setValue(
+        'Step 1 – Paste some code here.\n\n' +
+        'Step 2 – Set your preferences.\n\n' +
+        'Step 3 – Hit clean! 👍'
+      );
+      return;
+    }
+
+    // Determine API endpoint based on mode
+    switch(mode) {
+    case 'javascript':
+      endpoint = '/api/js';
+      data = {
+        'code': code,
+        'indent': $('#indent').val(),
+        'line-length': parseInt($('#line-length').val()),
+        'brace-style': $('#brace-style').val(),
+        'spaces-in-parenthesis': $('#spaces-in-parenthesis').prop('checked'),
+        'break-chained-methods': $('#break-chained-methods').prop('checked'),
+        'commas-at-beginning': $('#commas-at-beginning').prop('checked'),
+        'keep-array-indentation': $('#keep-array-indentation').prop('checked'),
+        'preserve-empty-lines': $('#preserve-empty-lines').prop('checked')
+      };
+      break;
+
+    case 'css':
+      endpoint = '/api/css';
+      data = {
+        'code': code,
+        'indent': $('#indent').val(),
+        'newline-between-selectors': $('#newline-between-selectors').prop('checked'),
+        'newline-between-rules': $('#newline-between-rules').prop('checked')
+      };
+      break;
+
+    default:
+      endpoint = '/api/html';
+      data = {
+        'code': code,
+        'indent': $('#indent').val(),
+        'line-length': parseInt($('#line-length').val()),
+        'output': $('#output').val(),
+        'indent-style': $('#indent-style').val(),
+        'add-empty-lines': $('#add-empty-lines').prop('checked'),
+        'allow-proprietary-attribs': $('#allow-proprietary-attribs').prop('checked'),
+        'optimize-for-ms-word': $('#optimize-for-ms-word').prop('checked')
+      };
+      break;
+    }
+
+    // Send the request
+    progress.go(50);
+    $.post(endpoint, data)
+    .done(function(res) {
+      editor.setValue(res.clean || '');
+      editor.execCommand('selectAll');
+      editor.focus();
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+      editor.setValue('API error: ' + errorThrown);
+    })
+    .always(function() {
+      progress.go(100);
+    });
+  });
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  // Init
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Initialize editor
+  editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+    theme: 'one-dark',
+    lineNumbers: true,
+    lineWrapping: false,
+    matchBrackets: true,
+    matchTags: { bothTags: true },
+    mode: $(':radio[name="mode"]:checked').val(),
+    indentUnit: $('#indent').val() === 'tabs' ? 4 : parseInt($('#indent').val()),
+    indentWithTabs: $('#indent').val() === 'tabs',
+    styleActiveLine: true,
+    rulers: null
+  });
+
+  // Initial restore
+  restoreOptions();
+
+  // Protect email address
+  $('#sponsor').attr('href',
+    'mailto:' + 'cory' + String.fromCharCode(64) + 'abeautifulsite.net' +
+    '?subject=Advertise%20on%20DirtyMarkup.com'
+  );
+});
