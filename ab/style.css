@@ -234,7 +234,7 @@ html, body{
 	padding-top: 15px;
 }
 
-@media (max-width: 768px){
+/*@media (max-width: 768px){
 	
 	.big_text{
 		width:90%;
@@ -244,7 +244,7 @@ html, body{
 		width:90%;
 		margin:15px auto;
 	}
-}
+}*/
 
 
 @media (max-width: 1360px){
@@ -287,14 +287,29 @@ html, body{
 	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 530px){
 	
 	.big_text{
-		width:90%;
-		margin:15px auto;
+		width:95%;
+		margin:10px auto;
+		box-sizing: border-box;
+	}
+	.big_text h1{
+		font-size: 48px;
 	}
 	.form_block{
-		width:90%;
-		margin:15px auto;
+		width:95%;
+		margin:10px auto;
+				box-sizing: border-box;
+
+	}
+	.af-element{
+		padding: 10px;
+	}
+	.header{
+		height: 65px;
+	}
+	.logo_text h1{
+		font-size: 34px;
 	}
 }
