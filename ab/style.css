@@ -273,7 +273,7 @@ html, body{
 	}
 }
 @media (max-width:480px){
-	.main_block{
+	.big_text{
 		width:90%;
 	}
 	.form_block{
