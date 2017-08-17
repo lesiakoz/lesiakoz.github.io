@@ -272,3 +272,11 @@ html, body{
 		margin: 0 auto;
 	}
 }
+@media (max-width:480px){
+	.main_block{
+		width:90%;
+	}
+	.form_block{
+		width:90%;
+	}
+}
